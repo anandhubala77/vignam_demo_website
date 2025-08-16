@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment, useGLTF, useAnimations } from "@react-three/drei";
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 function Model() {
