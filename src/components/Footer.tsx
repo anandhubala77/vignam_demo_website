@@ -4,7 +4,7 @@ import { IoMdSunny } from "react-icons/io";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-10 px-6">
+    <footer className="bg-gray-300 text-black py-10 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
        {/* Logo */}
        
@@ -46,7 +46,7 @@ export default function Footer() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h3 className="text-lg font-semibold text-white">Quick Links</h3>
+          <h3 className="text-lg font-semibold text-black">Quick Links</h3>
           <ul className="mt-3 space-y-2 text-sm">
             <li><a href="#" className="hover:text-white">Home</a></li>
             <li><a href="#" className="hover:text-white">About</a></li>
@@ -63,7 +63,7 @@ export default function Footer() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h3 className="text-lg font-semibold text-white">Resources</h3>
+          <h3 className="text-lg font-semibold text-black ">Resources</h3>
           <ul className="mt-3 space-y-2 text-sm">
             <li><a href="#" className="hover:text-white">Blog</a></li>
             <li><a href="#" className="hover:text-white">Help Center</a></li>
@@ -81,7 +81,7 @@ export default function Footer() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
         >
-          <h3 className="text-lg font-semibold text-white">Newsletter</h3>
+          <h3 className="text-lg font-semibold text-black">Newsletter</h3>
           <p className="mt-3 text-sm">Subscribe to get the latest updates.</p>
           <div className="mt-4 flex">
             <input
@@ -103,7 +103,7 @@ export default function Footer() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 0.6 }}
-        className="text-center text-sm text-gray-500 mt-10 border-t border-gray-700 pt-6"
+        className="text-center text-sm text-black mt-10 border-t border-gray-700 pt-6"
       >
         <div className="flex items-center justify-center gap-1"><span>© {new Date().getFullYear()} </span> <IoMdSunny/>Forge <span>All rights reserved.</span></div>
       </motion.div>
