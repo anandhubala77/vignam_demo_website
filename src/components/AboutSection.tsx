@@ -104,7 +104,7 @@ export default function AboutSection() {
                     className="mt-2.5 px-2 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition flex items-center gap-3 text-sm"
                   >
                     
-                  <FaStarOfLife/>  UPLOAD YOUR DESIGN <FaStarOfLife/>
+                  <FaStarOfLife/>About<FaStarOfLife/>
                   </motion.button>
 
 
