@@ -1,17 +1,22 @@
 import { motion } from "framer-motion";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { IoMdSunny } from "react-icons/io";
 
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300 py-10 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Brand Section */}
+       {/* Logo */}
+       
+
+
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl font-bold text-white">YourBrand</h2>
+           <div className="text-xl font-bold flex items-center gap-1"> <IoMdSunny/>Forge</div>
           <p className="mt-3 text-sm">
             Building amazing digital experiences with simplicity, elegance, and
             performance.
@@ -34,6 +39,8 @@ export default function Footer() {
         </motion.div>
 
         {/* Quick Links */}
+
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -49,6 +56,8 @@ export default function Footer() {
         </motion.div>
 
         {/* Resources */}
+
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -63,7 +72,10 @@ export default function Footer() {
           </ul>
         </motion.div>
 
-        {/* Newsletter */}
+      
+
+
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -85,13 +97,15 @@ export default function Footer() {
       </div>
 
       {/* Bottom Line */}
+
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 0.6 }}
         className="text-center text-sm text-gray-500 mt-10 border-t border-gray-700 pt-6"
       >
-        © {new Date().getFullYear()} YourBrand. All rights reserved.
+        <div className="flex items-center justify-center gap-1"><span>© {new Date().getFullYear()} </span> <IoMdSunny/>Forge <span>All rights reserved.</span></div>
       </motion.div>
     </footer>
   );

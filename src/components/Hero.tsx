@@ -2,7 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment, useGLTF, useAnimations } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-
+import { FaArrowRightLong } from "react-icons/fa6";
 function Model() {
   const group = useRef<any>(null);
   const { scene, animations } = useGLTF("/landing_page_motor.glb");
@@ -36,6 +36,8 @@ export default function Hero() {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center text-center bg-white px-6">
       {/* Heading */}
+
+      
       <motion.h1
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +56,9 @@ export default function Hero() {
         Shipped as Fast as Tomorrow
       </motion.h1>
 
-      {/* 3D Model */}
+      {/* 3D  */}
+
+
       <div className="w-full h-[400px] mt-12">
         <Canvas>
           <ambientLight intensity={0.5} />
@@ -66,6 +70,7 @@ export default function Hero() {
       </div>
 
       {/* Subtext */}
+
       <motion.p
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -78,15 +83,18 @@ export default function Hero() {
       </motion.p>
 
       {/* Button */}
+
       <motion.button
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: false, amount: 0.5 }}
         transition={{ duration: 0.5, delay: 0.4 }}
-        className="mt-8 px-8 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
+        className="mt-8 px-8 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition flex items-center gap-3"
       >
+        <FaArrowRightLong />
         UPLOAD YOUR DESIGN
       </motion.button>
+
     </section>
   );
 }

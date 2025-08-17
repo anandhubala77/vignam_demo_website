@@ -55,45 +55,47 @@ export default function AboutSection() {
     const [activeTab, setActiveTab] = useState(categories[0]);
 
     const textRef = useRef<HTMLElement[]>([]);
-  useEffect(() => {
-    textRef.current.forEach((el) => {
-      gsap.fromTo(
-        el,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: el,
-            start: "top 80%",
-            end: "top 30%",
-            toggleActions: "play reverse play reverse", 
-            // plays when scrolling down into view,
-            // reverses when leaving,
-            // plays again on scroll up, reverses on leave
-          },
+    useEffect(() => {
+        textRef.current.forEach((el) => {
+            gsap.fromTo(
+                el,
+                { opacity: 0, y: 50 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 80%",
+                        end: "top 30%",
+                        toggleActions: "play reverse play reverse",
+
+                    },
+                }
+            );
+        });
+    }, []);
+
+
+
+    const addToRefs = (el: HTMLHeadingElement | null) => {
+        if (el && !textRef.current.includes(el)) {
+            textRef.current.push(el);
         }
-      );
-    });
-  }, []);
-
-
-  // assign ref correctly
-  const addToRefs = (el: HTMLHeadingElement | null) => {
-    if (el && !textRef.current.includes(el)) {
-      textRef.current.push(el);
-    }
-  };
+    };
     return (
         <div className="max-w-7xl mx-auto py-16 px-6 md:flex md:gap-10">
-            {/* LEFT SIDE (Tabs & Content) */}
+
+
+            {/* LEFT SIDE Tab Content */}
+
+
             <div className="md:w-3/5 space-y-6">
                 <div>
                     <h1
                         className="text-3xl md:text-6xl text-gray-800 leading-snug"
                         style={{ fontFamily: "'Open Sans', sans-serif" }}
-                         
+
                     >
                         <span className="block" ref={addToRefs} >Revolutionizing</span>
                         <span className="block" ref={addToRefs}>Manufacturing with</span>
@@ -104,37 +106,53 @@ export default function AboutSection() {
                 </div>
 
                 {/* Tabs */}
+
+
+
                 <div className="flex flex-col gap-3 mb-6">
                     {categories.map((cat, index) => (
                         <button
                             key={cat.id}
                             onClick={() => setActiveTab(cat)}
-                            className={`group px-4 py-2 rounded-lg font-medium transition text-left flex items-center justify-between ${activeTab.id === cat.id
-                                ? "bg-blue-600 text-white shadow-md"
-                                : " text-gray-700 hover:bg-gray-200"
+                            className={`group px-4 py-2 rounded-lg font-medium transition text-left flex items-center justify-between 
+        ${activeTab.id === cat.id
+                                    ? "bg-blue-600 text-white shadow-md"
+                                    : "text-gray-700 hover:bg-gray-200"
                                 }`}
                         >
-                            {/* Number / Arrow */}
+                            {/* Number  Arrow */}
                             <span className="mr-4 w-6 text-right">
-                                <span className="inline-block group-hover:hidden">
-                                    {("0" + (index + 1)).slice(-2)}
-                                </span>
-                                <span className="hidden group-hover:inline">
+                               
+                                {activeTab.id !== cat.id && (
+                                    <span className="inline-block group-hover:hidden">
+                                        {("0" + (index + 1)).slice(-2)}
+                                    </span>
+                                )}
+
+                             
+                                {(activeTab.id === cat.id) && (
                                     <PiArrowRightLight className="inline w-5 h-5" />
-                                </span>
+                                )}
+                                {activeTab.id !== cat.id && (
+                                    <span className="hidden group-hover:inline">
+                                        <PiArrowRightLight className="inline w-5 h-5" />
+                                    </span>
+                                )}
                             </span>
 
                             {/* Title */}
                             <span>{cat.title}</span>
 
-                            {/* End Icon */}
                             {cat.icon && <span>{cat.icon}</span>}
                         </button>
                     ))}
                 </div>
 
 
-                {/* Content (Image + Text) */}
+
+                {/* Content Image  Text */}
+
+
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={activeTab.id}
@@ -146,6 +164,8 @@ export default function AboutSection() {
                     >
                         <div className="flex flex-col gap-6 items-center">
                             {/* Image */}
+
+
                             <motion.img
                                 src={activeTab.image}
                                 alt={activeTab.title}
@@ -163,7 +183,13 @@ export default function AboutSection() {
 
 
 
-            {/* RIGHT SIDE (Review / Profile Card) */}
+            {/* RIGHT SIDE */}
+
+
+
+
+
+
             <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-start max-w-lg mx-auto">
                 <div className="flex items-center mb-4">
                     <img
