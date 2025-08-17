@@ -9,6 +9,8 @@ import { PiArrowRightLight } from "react-icons/pi";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import { FaStarOfLife } from "react-icons/fa6";
+
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -84,13 +86,28 @@ export default function AboutSection() {
         }
     };
     return (
+
+
         <div className="max-w-7xl mx-auto py-16 px-6 md:flex md:gap-10">
 
 
             {/* LEFT SIDE Tab Content */}
+            
 
 
             <div className="md:w-3/5 space-y-6">
+             <motion.button
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: false, amount: 0.5 }}
+                    transition={{ duration: 0.4, delay: 0.5 }}
+                    className="mt-2.5 px-2 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition flex items-center gap-3 text-sm"
+                  >
+                    
+                  <FaStarOfLife/>  UPLOAD YOUR DESIGN <FaStarOfLife/>
+                  </motion.button>
+
+
                 <div>
                     <h1
                         className="text-3xl md:text-6xl text-gray-800 leading-snug"
